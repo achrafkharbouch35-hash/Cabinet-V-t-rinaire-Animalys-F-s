@@ -1,0 +1,437 @@
+/* =========================================
+   CABINET VÉTÉRINAIRE — style.css
+   Compatible avec index.html fourni
+   ========================================= */
+
+:root{
+  --green:#2f6f62;
+  --green-dark:#214f47;
+  --green-soft:#eaf3ef;
+  --blue:#426b78;
+  --cream:#fbfaf6;
+  --white:#ffffff;
+  --ink:#24312e;
+  --muted:#66736f;
+  --line:#dfe8e4;
+  --accent:#d6a85f;
+  --shadow:0 18px 50px rgba(31,60,53,.10);
+  --radius:18px;
+  --container:1180px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Plus Jakarta Sans",Arial,sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.7;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.container{width:min(var(--container),calc(100% - 40px));margin:auto}
+.section{padding:100px 0;position:relative}
+.eyebrow{
+  color:var(--green);
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  font-size:.72rem;
+  font-weight:700;
+  margin-bottom:14px;
+}
+h1,h2,h3{
+  font-family:"Fraunces",Georgia,serif;
+  line-height:1.15;
+  color:var(--green-dark);
+}
+h2{font-size:clamp(2rem,4vw,3.2rem)}
+p{color:var(--muted)}
+
+/* ===== Header ===== */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(251,250,246,.94);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(47,111,98,.10);
+}
+.header-inner{
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+}
+.brand{display:flex;align-items:center;gap:10px;color:var(--green-dark)}
+.brand-mark{display:flex;align-items:center}
+.brand-name{display:block;font-weight:700;letter-spacing:.01em}
+.brand-sub{
+  display:block;
+  font-size:.68rem;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:.12em;
+}
+.main-nav ul{list-style:none;display:flex;gap:26px}
+.main-nav a{font-size:.85rem;color:var(--muted);transition:.2s}
+.main-nav a:hover{color:var(--green)}
+.header-actions{display:flex;align-items:center;gap:12px}
+
+/* ===== Buttons ===== */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  min-height:46px;
+  padding:0 20px;
+  border-radius:999px;
+  font-size:.82rem;
+  font-weight:700;
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:transform .2s,box-shadow .2s,background .2s;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{
+  background:var(--green);
+  color:white;
+  box-shadow:0 9px 24px rgba(47,111,98,.20);
+}
+.btn-primary:hover{background:var(--green-dark)}
+.btn-outline{border-color:var(--green);color:var(--green);background:transparent}
+.btn-outline:hover{background:var(--green-soft)}
+.btn-whatsapp{background:#25d366;color:#fff}
+.btn-large{min-height:54px;padding:0 25px}
+
+/* ===== Hero ===== */
+.hero{
+  min-height:calc(100vh - 78px);
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  background:linear-gradient(135deg,#f8fbf8 0%,#eef5f1 100%);
+  position:relative;
+}
+.hero-bg-shape{
+  position:absolute;
+  width:620px;height:620px;
+  border-radius:50%;
+  background:rgba(214,168,95,.10);
+  right:-220px;top:-180px;
+}
+.hero-inner{
+  display:grid;
+  grid-template-columns:1.02fr .98fr;
+  align-items:center;
+  gap:70px;
+  padding:90px 0 110px;
+  position:relative;
+  z-index:1;
+}
+.hero-text h1{font-size:clamp(3rem,6vw,5.6rem);margin-bottom:20px}
+.hero-slogan{font-family:"Fraunces",Georgia,serif;font-size:1.45rem;color:var(--green-dark);max-width:620px;margin-bottom:15px}
+.hero-text-desc{max-width:620px;margin-bottom:30px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-media{position:relative}
+.hero-frame{
+  aspect-ratio:4/5;
+  overflow:hidden;
+  border-radius:140px 24px 24px 24px;
+  box-shadow:var(--shadow);
+  background:var(--green-soft);
+}
+.hero-frame img{width:100%;height:100%;object-fit:cover}
+.hero-badge{
+  position:absolute;
+  left:-25px;
+  bottom:28px;
+  background:#fff;
+  padding:18px 22px;
+  border-radius:16px;
+  box-shadow:var(--shadow);
+}
+.hero-badge-num{display:block;font-family:"Fraunces",Georgia,serif;font-size:1.8rem;color:var(--green)}
+.hero-badge-label{font-size:.72rem;color:var(--muted)}
+.hero-divider{position:absolute;bottom:-1px;left:0;width:100%;line-height:0}
+.hero-divider svg{width:100%;height:70px;fill:var(--cream)}
+
+/* ===== Section heads ===== */
+.section-head{max-width:720px;margin-bottom:50px}
+.section-head p{margin-top:14px}
+.section-head-light h2,.section-head-light p{color:#fff}
+
+/* ===== À propos ===== */
+.apropos{background:var(--cream)}
+.apropos-inner{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:80px;
+  align-items:center;
+}
+.apropos-frame{
+  aspect-ratio:4/5;
+  overflow:hidden;
+  border-radius:24px;
+  box-shadow:var(--shadow);
+}
+.apropos-frame img{width:100%;height:100%;object-fit:cover}
+.apropos-content .lead{font-size:1.05rem;margin:18px 0 26px}
+.check-list{list-style:none;display:grid;gap:14px}
+.check-list li{display:flex;gap:12px;color:var(--muted)}
+.check-icon{
+  flex:0 0 25px;
+  width:25px;height:25px;
+  border-radius:50%;
+  display:grid;place-items:center;
+  background:var(--green-soft);
+  color:var(--green);
+  font-weight:700;
+}
+
+/* ===== Services ===== */
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.service-card,.patient-card,.pourquoi-card,.team-card,.avis-card,.conseil-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:0 7px 25px rgba(31,60,53,.045);
+}
+.service-card{padding:30px}
+.service-icon,.pourquoi-icon{
+  width:48px;height:48px;
+  border-radius:14px;
+  display:grid;place-items:center;
+  background:var(--green-soft);
+  color:var(--green);
+  margin-bottom:18px;
+}
+.service-card h3,.pourquoi-card h3{font-size:1.25rem;margin-bottom:8px}
+.service-card p,.patient-card p,.pourquoi-card p{font-size:.88rem}
+
+/* ===== Patients ===== */
+.patients-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.patient-card{overflow:hidden}
+.patient-media{aspect-ratio:4/3;background:var(--green-soft)}
+.patient-media img{width:100%;height:100%;object-fit:cover}
+.patient-card h3{padding:20px 20px 4px;font-size:1.3rem}
+.patient-card p{padding:0 20px 22px}
+
+/* ===== Pourquoi ===== */
+.pourquoi{background:var(--green-dark)}
+.pourquoi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pourquoi-card{padding:30px}
+.pourquoi-card h3{color:var(--green-dark)}
+
+/* ===== Équipe ===== */
+.equipe-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.team-card{overflow:hidden}
+.team-photo{aspect-ratio:4/4;background:var(--green-soft)}
+.team-photo img{width:100%;height:100%;object-fit:cover}
+.team-card h3{font-size:1.35rem;padding:20px 22px 3px}
+.team-role{padding:0 22px;color:var(--green);font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700}
+.team-spec{padding:7px 22px 0;font-weight:600;font-size:.85rem}
+.team-bio{padding:8px 22px 24px;font-size:.86rem}
+
+/* ===== Galerie ===== */
+.galerie{background:#f1f6f3}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-auto-rows:220px;
+  gap:10px;
+}
+.gallery-item{
+  overflow:hidden;
+  border-radius:16px;
+  background:var(--green-soft);
+}
+.gallery-item.span-2{grid-column:span 2;grid-row:span 2}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gallery-item:hover img{transform:scale(1.04)}
+
+/* ===== Conseils ===== */
+.conseils-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.conseil-card{overflow:hidden}
+.conseil-content{padding:28px}
+.conseil-content h3{font-size:1.3rem;margin-bottom:8px}
+.conseil-toggle{
+  border:0;background:none;color:var(--green);
+  font-weight:700;padding:0;margin-top:16px;cursor:pointer;
+}
+.conseil-plus{display:inline-block;margin-left:5px;transition:.2s}
+
+/* ===== Avis ===== */
+.avis{background:var(--green-soft)}
+.avis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.avis-card{padding:30px}
+.avis-stars{color:var(--accent);letter-spacing:3px;margin-bottom:14px}
+.avis-card p{font-style:italic;margin-bottom:14px}
+.avis-card strong{font-size:.8rem;color:var(--green-dark)}
+
+/* ===== Rendez-vous ===== */
+.rendezvous{
+  background:linear-gradient(135deg,var(--green-dark),var(--green));
+  color:#fff;
+}
+.rendezvous-inner{
+  display:grid;
+  grid-template-columns:1fr .9fr;
+  gap:60px;
+  align-items:center;
+}
+.rendezvous h2{color:#fff}
+.rendezvous-text p{color:rgba(255,255,255,.78);margin:16px 0 28px}
+.rendezvous-actions{display:flex;flex-wrap:wrap;gap:12px}
+.rendezvous-media .rendezvous-frame{
+  aspect-ratio:4/3;
+  border-radius:24px;
+  overflow:hidden;
+}
+.rendezvous-frame img{width:100%;height:100%;object-fit:cover}
+
+/* ===== Contact ===== */
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+.contact-details{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.contact-item{
+  display:flex;
+  gap:14px;
+  padding:22px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+}
+.contact-icon{
+  flex:0 0 42px;
+  width:42px;height:42px;
+  display:grid;place-items:center;
+  color:var(--green);
+  background:var(--green-soft);
+  border-radius:12px;
+}
+.contact-item h3{font-size:1rem;margin-bottom:4px}
+.contact-item p,.contact-item a{font-size:.82rem;color:var(--muted)}
+.contact-item a:hover{color:var(--green)}
+.contact-map{
+  min-height:430px;
+  overflow:hidden;
+  border-radius:22px;
+  box-shadow:var(--shadow);
+}
+.contact-map iframe{display:block}
+
+/* ===== Footer ===== */
+.site-footer{background:#183b35;color:rgba(255,255,255,.75);padding:55px 0 20px}
+.footer-inner{
+  display:grid;
+  grid-template-columns:1.3fr 1fr 1fr;
+  gap:45px;
+  padding-bottom:35px;
+}
+.footer-brand .brand{color:#fff;margin-bottom:15px}
+.footer-brand p,.footer-contact p,.footer-nav a{font-size:.82rem;color:rgba(255,255,255,.65)}
+.footer-nav{display:grid;gap:8px}
+.footer-nav a:hover{color:#fff}
+.footer-contact{display:grid;gap:8px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:20px}
+.footer-bottom p{font-size:.72rem;color:rgba(255,255,255,.5)}
+
+/* ===== WhatsApp ===== */
+.floating-whatsapp{
+  position:fixed;
+  right:24px;
+  bottom:24px;
+  width:60px;height:60px;
+  border-radius:50%;
+  display:grid;place-items:center;
+  background:#25d366;
+  color:#fff;
+  box-shadow:0 12px 30px rgba(0,0,0,.20);
+  z-index:90;
+  transition:transform .2s;
+}
+.floating-whatsapp:hover{transform:scale(1.08)}
+
+/* ===== Reveal ===== */
+[data-reveal]{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity .7s ease,transform .7s ease;
+}
+[data-reveal].is-visible{opacity:1;transform:translateY(0)}
+
+/* ===== Responsive ===== */
+.hamburger{
+  display:none;
+  width:44px;height:44px;
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:12px;
+  cursor:pointer;
+}
+.hamburger span{
+  display:block;width:21px;height:2px;
+  background:var(--green-dark);
+  margin:4px auto;
+  transition:.2s;
+}
+.main-nav.open{display:block}
+
+@media(max-width:1000px){
+  .main-nav ul{gap:15px}
+  .hero-inner{gap:45px}
+  .services-grid,.conseils-grid,.avis-grid{grid-template-columns:repeat(2,1fr)}
+  .patients-grid{grid-template-columns:repeat(2,1fr)}
+  .equipe-grid,.pourquoi-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-inner{grid-template-columns:1fr 1fr}
+}
+
+@media(max-width:760px){
+  .container{width:min(var(--container),calc(100% - 28px))}
+  .section{padding:72px 0}
+  .header-inner{min-height:70px}
+  .header-actions .btn{display:none}
+  .hamburger{display:block}
+  .main-nav{
+    display:none;
+    position:absolute;
+    left:0;right:0;top:70px;
+    background:rgba(251,250,246,.98);
+    border-bottom:1px solid var(--line);
+    padding:22px;
+  }
+  .main-nav.open{display:block}
+  .main-nav ul{flex-direction:column;gap:18px}
+  .hero{min-height:auto}
+  .hero-inner,.apropos-inner,.rendezvous-inner,.contact-grid{
+    grid-template-columns:1fr;
+  }
+  .hero-inner{padding:70px 0 100px}
+  .hero-text h1{font-size:3rem}
+  .hero-frame{max-height:520px}
+  .hero-badge{left:12px}
+  .services-grid,.conseils-grid,.avis-grid,.patients-grid,.equipe-grid,.pourquoi-grid{
+    grid-template-columns:1fr;
+  }
+  .contact-details{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}
+  .gallery-item.span-2{grid-column:span 2;grid-row:span 1}
+  .footer-inner{grid-template-columns:1fr}
+}
+
+@media(max-width:460px){
+  .hero-actions,.rendezvous-actions{flex-direction:column;align-items:stretch}
+  .btn{width:100%}
+  .gallery-grid{grid-auto-rows:145px}
+  .floating-whatsapp{right:16px;bottom:16px}
+}
