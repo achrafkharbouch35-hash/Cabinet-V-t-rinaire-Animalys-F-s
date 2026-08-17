@@ -165,3 +165,90 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+.cat-hover .patient-media {
+  position: relative;
+  overflow: visible;
+}
+
+.floating-cats {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.floating-cats img {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.3) translateY(20px);
+  transition: opacity 0.35s ease, transform 0.45s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Apparition au survol */
+.cat-hover:hover .floating-cats img {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Positions des petites photos */
+.floating-cats img:nth-child(1) {
+  top: -35px;
+  left: -35px;
+}
+
+.floating-cats img:nth-child(2) {
+  top: -30px;
+  right: -35px;
+}
+
+.floating-cats img:nth-child(3) {
+  bottom: -35px;
+  left: -40px;
+}
+
+.floating-cats img:nth-child(4) {
+  bottom: -35px;
+  right: -40px;
+}
+
+/* Petit mouvement flottant */
+.cat-hover:hover .floating-cats img:nth-child(1) {
+  animation: floatCat1 2.5s ease-in-out infinite;
+}
+
+.cat-hover:hover .floating-cats img:nth-child(2) {
+  animation: floatCat2 3s ease-in-out infinite;
+}
+
+.cat-hover:hover .floating-cats img:nth-child(3) {
+  animation: floatCat3 2.7s ease-in-out infinite;
+}
+
+.cat-hover:hover .floating-cats img:nth-child(4) {
+  animation: floatCat4 3.2s ease-in-out infinite;
+}
+
+@keyframes floatCat1 {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-12px) rotate(5deg); }
+}
+
+@keyframes floatCat2 {
+  0%, 100% { transform: translateY(0) rotate(5deg); }
+  50% { transform: translateY(10px) rotate(-5deg); }
+}
+
+@keyframes floatCat3 {
+  0%, 100% { transform: translateY(0) rotate(4deg); }
+  50% { transform: translateY(-10px) rotate(-4deg); }
+}
+
+@keyframes floatCat4 {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(12px) rotate(4deg); }
+}
