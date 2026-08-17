@@ -3,19 +3,20 @@
    ================================ */
 
 const CONFIG = {
-  // Remplace ces informations par celles du cabinet
-  whatsapp: "212XXXXXXXXX",
+  whatsapp: "212535732732",
   whatsappMessage: "Bonjour, je souhaite prendre rendez-vous au cabinet vétérinaire.",
-  phone: "+212XXXXXXXXX",
+  phone: "+212535732732",
   email: "contact@cabinet.ma",
-  instagramUrl: "https://www.instagram.com/",
-  address: "[Adresse du cabinet]",
+  instagramUrl: "https://www.instagram.com/animalys_fes_/",
+  address: "Atlas, N3 résidence Salma, Rue El Abed El Fassi, Fès 30000",
+
   hours: {
-    lunVen: "Lundi – Vendredi : 09:00 – 18:00",
+    lunVen: "Lundi – Vendredi : 09:00 – 19:00",
     sam: "Samedi : 09:00 – 13:00",
     dim: "Dimanche : Fermé"
   },
-  mapUrl: "https://www.google.com/maps?q=Maroc&output=embed"
+
+  mapUrl: "https://www.google.com/maps?q=Atlas,+N3+residence+Salma,+Rue+El+Abed+El+Fassi,+Fes+30000&output=embed"
 };
 
 document.addEventListener("DOMContentLoaded", () => {
